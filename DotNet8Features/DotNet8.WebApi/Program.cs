@@ -1,3 +1,5 @@
+using DotNet8.Services;
+using DotNet8.Services.Abstract;
 
 namespace DotNet8.WebApi
 {
@@ -14,6 +16,10 @@ namespace DotNet8.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddSingleton<INotificationService, SmsNotificationService>();
+            builder.Services.AddSingleton<INotificationService, PushNotificationService>();
+            builder.Services.AddSingleton<INotificationService, EmailNotificationService>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -26,7 +32,6 @@ namespace DotNet8.WebApi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
