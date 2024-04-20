@@ -2,5 +2,5 @@
 
 public interface INotificationService
 {
-    void SendNotification(string message);
+    bool SendNotification(string message);
 }

@@ -4,24 +4,27 @@ namespace DotNet8.Services;
 
 public class EmailNotificationService : INotificationService
 {
-    public void SendNotification(string message)
+    public bool SendNotification(string message)
     {
         Console.WriteLine(message);
+        return true;
     }
 }
 
 public class PushNotificationService : INotificationService
 {
-    public void SendNotification(string message)
+    public bool SendNotification(string message)
     {
         Console.WriteLine(message);
+        return true;
     }
 }
 
 public class SmsNotificationService : INotificationService
 {
-    public void SendNotification(string message)
+    public bool SendNotification(string message)
     {
         Console.WriteLine(message);
+        return true;
     }
 }

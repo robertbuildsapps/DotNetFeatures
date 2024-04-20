@@ -16,6 +16,8 @@ namespace DotNet8.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddScoped<IApplicationService, ApplicationService>();
+
             builder.Services.AddSingleton<INotificationService, SmsNotificationService>();
             builder.Services.AddSingleton<INotificationService, PushNotificationService>();
             builder.Services.AddSingleton<INotificationService, EmailNotificationService>();
